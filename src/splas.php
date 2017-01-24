@@ -30,22 +30,22 @@ class splas
 
     public function getPhoto($id = null)
     {
-        return ($id !== null) ? self::get('photos/' . $id) : '';
+        return ($id !== null) ? self::get('photos/'.$id) : '';
     }
 
     public function getStats($id = null)
     {
-        return ($id !== null) ? self::get('photos/' . $id . '/stats') : '';
+        return ($id !== null) ? self::get('photos/'.$id.'/stats') : '';
     }
 
     public function getLink($id = null)
     {
-        return ($id !== null) ? self::get('photos/' . $id . '/download') : '';
+        return ($id !== null) ? self::get('photos/'.$id.'/download') : '';
     }
 
     private static function get($endpoint)
     {
-        $url = self::$api_base . $endpoint . ((strpos($endpoint, '?') > 0) ? '&client_id=' : '?client_id=') . self::$app_id;
+        $url = self::$api_base.$endpoint.((strpos($endpoint, '?') > 0) ? '&client_id=' : '?client_id=').self::$app_id;
         $ch = curl_init();
         curl_setopt_array(
             $ch,
@@ -58,8 +58,8 @@ class splas
         );
         $result = curl_exec($ch);
         curl_close($ch);
-		
-		$result = json_decode($result, true);
+
+        $result = json_decode($result, true);
 
         return $result;
     }

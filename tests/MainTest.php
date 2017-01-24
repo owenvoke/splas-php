@@ -1,9 +1,9 @@
 <?php
+
 use pxgamer\splas;
 
 class MainTest extends PHPUnit_Framework_TestCase
 {
-
     public function testCanBeInitialised()
     {
         $splasPhp = new splas();
@@ -57,5 +57,4 @@ class MainTest extends PHPUnit_Framework_TestCase
         $data = is_array($photo);
         $this->assertTrue($data);
     }
-
 }

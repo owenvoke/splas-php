@@ -21,9 +21,9 @@ $splas = new \pxgamer\splas('APP_ID');
 
 Functions             | Parameters | Returns
 --------------------- | ---------- | -------
-getPhotos()           | void       | string (json)
-getCuratedPhotos()    | void       | string (json)
-getRandom()           | void       | string (json)
-getPhoto($id)         | string     | string (json)
-getStats($id)         | string     | string (json)
-getLink($id)          | string     | string (json)
+getPhotos()           | void       | array
+getCuratedPhotos()    | void       | array
+getRandom()           | void       | array
+getPhoto($id)         | string     | array
+getStats($id)         | string     | array
+getLink($id)          | string     | array

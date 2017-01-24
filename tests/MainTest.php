@@ -14,7 +14,7 @@ class MainTest extends PHPUnit_Framework_TestCase
     {
         $splasPhp = new splas();
         $photos = $splasPhp->getPhotos();
-        $data = is_array(json_decode($photos, true));
+        $data = is_array($photos);
         $this->assertTrue($data);
     }
 
@@ -22,7 +22,7 @@ class MainTest extends PHPUnit_Framework_TestCase
     {
         $splasPhp = new splas();
         $photos = $splasPhp->getCuratedPhotos();
-        $data = is_array(json_decode($photos, true));
+        $data = is_array($photos);
         $this->assertTrue($data);
     }
 
@@ -30,7 +30,7 @@ class MainTest extends PHPUnit_Framework_TestCase
     {
         $splasPhp = new splas();
         $photos = $splasPhp->getRandom();
-        $data = is_array(json_decode($photos, true));
+        $data = is_array($photos);
         $this->assertTrue($data);
     }
 
@@ -38,7 +38,7 @@ class MainTest extends PHPUnit_Framework_TestCase
     {
         $splasPhp = new splas();
         $photo = $splasPhp->getPhoto('VGOiY1gZZYg');
-        $data = is_array(json_decode($photo, true));
+        $data = is_array($photo);
         $this->assertTrue($data);
     }
 
@@ -46,7 +46,7 @@ class MainTest extends PHPUnit_Framework_TestCase
     {
         $splasPhp = new splas();
         $photo = $splasPhp->getStats('VGOiY1gZZYg');
-        $data = is_array(json_decode($photo, true));
+        $data = is_array($photo);
         $this->assertTrue($data);
     }
 
@@ -54,7 +54,7 @@ class MainTest extends PHPUnit_Framework_TestCase
     {
         $splasPhp = new splas();
         $photo = $splasPhp->getLink('VGOiY1gZZYg');
-        $data = is_array(json_decode($photo, true));
+        $data = is_array($photo);
         $this->assertTrue($data);
     }
 

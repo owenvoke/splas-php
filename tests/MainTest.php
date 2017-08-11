@@ -2,7 +2,7 @@
 
 use pxgamer\Splas\Splas;
 
-class MainTest extends PHPUnit_Framework_TestCase
+class MainTest extends \PHPUnit\Framework\TestCase
 {	
     public function testCanBeInitialised()
     {

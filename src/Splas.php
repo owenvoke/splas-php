@@ -1,8 +1,8 @@
 <?php
 
-namespace pxgamer;
+namespace pxgamer\Splas;
 
-class splas
+class Splas
 {
     public static $api_base = 'https://api.unsplash.com/';
 

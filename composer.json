@@ -4,7 +4,7 @@
   "description": "A simple PHP wrapper for utilising the Unsplash api.",
   "license": "MIT",
   "require": {
-    "php": ">=5.5.0",
+    "php": ">=7.1.0",
     "ext-curl": "*"
   },
   "require-dev": {

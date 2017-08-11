@@ -1,18 +1,18 @@
 <?php
 
-use pxgamer\splas;
+use pxgamer\Splas\Splas;
 
 class MainTest extends PHPUnit_Framework_TestCase
-{
+{	
     public function testCanBeInitialised()
     {
-        $splasPhp = new splas();
-        $this->assertInstanceOf(splas::class, $splasPhp);
+        $splasPhp = new Splas();
+        $this->assertInstanceOf(Splas::class, $splasPhp);
     }
 
     public function testCanGetPhotos()
     {
-        $splasPhp = new splas();
+        $splasPhp = new Splas();
         $photos = $splasPhp->getPhotos();
         $data = is_array($photos);
         $this->assertTrue($data);
@@ -20,7 +20,7 @@ class MainTest extends PHPUnit_Framework_TestCase
 
     public function testCanGetCuratedPhotos()
     {
-        $splasPhp = new splas();
+        $splasPhp = new Splas();
         $photos = $splasPhp->getCuratedPhotos();
         $data = is_array($photos);
         $this->assertTrue($data);
@@ -28,7 +28,7 @@ class MainTest extends PHPUnit_Framework_TestCase
 
     public function testCanGetRandomPhotos()
     {
-        $splasPhp = new splas();
+        $splasPhp = new Splas();
         $photos = $splasPhp->getRandom();
         $data = is_array($photos);
         $this->assertTrue($data);
@@ -36,7 +36,7 @@ class MainTest extends PHPUnit_Framework_TestCase
 
     public function testCanGetPhotoById()
     {
-        $splasPhp = new splas();
+        $splasPhp = new Splas();
         $photo = $splasPhp->getPhoto('VGOiY1gZZYg');
         $data = is_array($photo);
         $this->assertTrue($data);
@@ -44,7 +44,7 @@ class MainTest extends PHPUnit_Framework_TestCase
 
     public function testCanGetStatsById()
     {
-        $splasPhp = new splas();
+        $splasPhp = new Splas();
         $photo = $splasPhp->getStats('VGOiY1gZZYg');
         $data = is_array($photo);
         $this->assertTrue($data);
@@ -52,7 +52,7 @@ class MainTest extends PHPUnit_Framework_TestCase
 
     public function testCanGetLinkById()
     {
-        $splasPhp = new splas();
+        $splasPhp = new Splas();
         $photo = $splasPhp->getLink('VGOiY1gZZYg');
         $data = is_array($photo);
         $this->assertTrue($data);

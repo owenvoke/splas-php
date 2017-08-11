@@ -10,13 +10,17 @@ __Include the class:__
 ```php
 <?php
 require 'vendor/autoload.php';
-$splas = new \pxgamer\splas('APP_ID');
+use pxgamer\Splas\Splas;
+
+$splas = new Splas('APP_ID');
 ```
 - Including the file manually  
 ```php
 <?php
-include 'src/splas.php';
-$splas = new \pxgamer\splas('APP_ID');
+include 'src/Splas.php';
+use pxgamer\Splas\Splas;
+
+$splas = new Splas('APP_ID');
 ```
 
 Functions             | Parameters | Returns

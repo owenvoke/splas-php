@@ -25,9 +25,9 @@ $splas = new Splas('APP_ID');
 
 Functions             | Parameters | Returns
 --------------------- | ---------- | -------
-getPhotos()           | void       | array
-getCuratedPhotos()    | void       | array
-getRandom()           | void       | array
-getPhoto($id)         | string     | array
-getStats($id)         | string     | array
-getLink($id)          | string     | array
+getPhotos()           | void       | array/null
+getCuratedPhotos()    | void       | array/null
+getRandom()           | void       | array/null
+getPhoto($id)         | string     | array/null
+getStats($id)         | string     | array/null
+getLink($id)          | string     | array/null

@@ -3,7 +3,7 @@
 use pxgamer\Splas\Splas;
 
 class MainTest extends \PHPUnit\Framework\TestCase
-{	
+{
     public function testCanBeInitialised()
     {
         $splasPhp = new Splas();

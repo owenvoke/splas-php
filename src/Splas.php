@@ -3,8 +3,7 @@
 namespace pxgamer\Splas;
 
 /**
- * Class Splas
- * @package pxgamer\Splas
+ * Class Splas.
  */
 class Splas
 {
@@ -20,6 +19,7 @@ class Splas
 
     /**
      * Splas constructor.
+     *
      * @param string $app_id
      */
     public function __construct($app_id = '')
@@ -28,7 +28,7 @@ class Splas
     }
 
     /**
-     * Get an associative array of photos
+     * Get an associative array of photos.
      *
      * @return array|null
      */
@@ -38,7 +38,7 @@ class Splas
     }
 
     /**
-     * Get an associative array of curated photos
+     * Get an associative array of curated photos.
      *
      * @return array|null
      */
@@ -48,7 +48,7 @@ class Splas
     }
 
     /**
-     * Get a random photo as an array from the API
+     * Get a random photo as an array from the API.
      *
      * @return array|null
      */
@@ -58,53 +58,59 @@ class Splas
     }
 
     /**
-     * Get a photo by ID
+     * Get a photo by ID.
      *
      * @param null|string $id
+     *
      * @return array|null
      */
     public function getPhoto($id = null)
     {
-        return ($id !== null) ? self::get('photos/' . $id) : null;
+        return ($id !== null) ? self::get('photos/'.$id) : null;
     }
 
     /**
-     * Get a specific photo's statistics
+     * Get a specific photo's statistics.
      *
      * @param null|string $id
+     *
      * @return array|null
      */
     public function getStats($id = null)
     {
-        return ($id !== null) ? self::get('photos/' . $id . '/stats') : null;
+        return ($id !== null) ? self::get('photos/'.$id.'/stats') : null;
     }
 
     /**
-     * Get an array containing the direct link for a photo (useful for downloading an image)
+     * Get an array containing the direct link for a photo (useful for downloading an image).
      *
      * @param null|string $id
+     *
      * @return array|null
      */
     public function getLink($id = null)
     {
-        return ($id !== null) ? self::get('photos/' . $id . '/download') : null;
+        return ($id !== null) ? self::get('photos/'.$id.'/download') : null;
     }
 
     /**
-     * Get the response from the API
+     * Get the response from the API.
      *
      * @param string $endpoint
+     *
      * @return mixed
      */
     private static function get($endpoint)
     {
-        $url = self::$api_base . $endpoint . ((strpos($endpoint,
-                    '?') > 0) ? '&client_id=' : '?client_id=') . self::$app_id;
+        $url = self::$api_base.$endpoint.((strpos(
+            $endpoint,
+            '?'
+        ) > 0) ? '&client_id=' : '?client_id=').self::$app_id;
         $ch = curl_init();
         curl_setopt_array(
             $ch,
             [
-                CURLOPT_URL => $url,
+                CURLOPT_URL            => $url,
                 CURLOPT_RETURNTRANSFER => 1,
             ]
         );

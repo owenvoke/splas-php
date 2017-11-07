@@ -31,14 +31,14 @@ $ composer require pxgamer/splas-php
 $splas = new Splas('APP_ID');
 ```
 
-Functions             | Parameters | Returns
---------------------- | ---------- | -------
-getPhotos()           | void       | array/null
-getCuratedPhotos()    | void       | array/null
-getRandom()           | void       | array/null
-getPhoto($id)         | string     | array/null
-getStats($id)         | string     | array/null
-getLink($id)          | string     | array/null
+Functions                    | Parameters | Returns
+---------------------------- | ---------- | -------
+`$splas->getPhotos()`        | void       | array/null
+`$splas->getCuratedPhotos()` | void       | array/null
+`$splas->getRandom()`        | void       | array/null
+`$splas->getPhoto($id)`      | string     | array/null
+`$splas->getStats($id)`      | string     | array/null
+`$splas->getLink($id)`       | string     | array/null
 
 ## Change log
 
@@ -83,4 +83,3 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-downloads]: https://packagist.org/packages/pxgamer/splas-php
 [link-author]: https://github.com/pxgamer
 [link-contributors]: ../../contributors
-``

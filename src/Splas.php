@@ -19,6 +19,7 @@ class Splas
 
     /**
      * Splas constructor.
+     *
      * @param string $app_id
      */
     public function __construct($app_id = '')
@@ -97,10 +98,10 @@ class Splas
      */
     private static function get($endpoint)
     {
-        $url = self::$api_base . $endpoint . ((strpos(
+        $url = self::$api_base.$endpoint.((strpos(
             $endpoint,
             '?'
-        ) > 0) ? '&client_id=' : '?client_id=') . self::$app_id;
+        ) > 0) ? '&client_id=' : '?client_id=').self::$app_id;
         $ch = curl_init();
         curl_setopt_array(
             $ch,

@@ -1,18 +1,18 @@
 {
-  "name": "pxgamer/splas-php",
-  "type": "library",
-  "description": "A simple PHP wrapper for utilising the Unsplash api.",
-  "license": "MIT",
-  "require": {
-    "php": ">=7.1.0",
-    "ext-curl": "*"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^6.3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "pxgamer\\Splas\\": "src/"
+    "name": "pxgamer/splas-php",
+    "type": "library",
+    "description": "A simple PHP wrapper for utilising the Unsplash api.",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "pxgamer\\Splas\\": "src/"
+        }
     }
-  }
 }

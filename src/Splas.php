@@ -98,8 +98,10 @@ class Splas
      */
     private static function get($endpoint)
     {
-        $url = self::$api_base . $endpoint . ((strpos($endpoint,
-                    '?') > 0) ? '&client_id=' : '?client_id=') . self::$app_id;
+        $url = self::$api_base . $endpoint . ((strpos(
+            $endpoint,
+            '?'
+        ) > 0) ? '&client_id=' : '?client_id=') . self::$app_id;
         $ch = curl_init();
         curl_setopt_array(
             $ch,

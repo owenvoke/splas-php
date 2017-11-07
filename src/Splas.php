@@ -61,6 +61,7 @@ class Splas
      * Get a photo by ID.
      *
      * @param null|string $id
+     *
      * @return array|null
      */
     public function getPhoto($id = null)
@@ -72,6 +73,7 @@ class Splas
      * Get a specific photo's statistics.
      *
      * @param null|string $id
+     *
      * @return array|null
      */
     public function getStats($id = null)
@@ -83,6 +85,7 @@ class Splas
      * Get an array containing the direct link for a photo (useful for downloading an image).
      *
      * @param null|string $id
+     *
      * @return array|null
      */
     public function getLink($id = null)
@@ -94,6 +97,7 @@ class Splas
      * Get the response from the API.
      *
      * @param string $endpoint
+     *
      * @return mixed
      */
     private static function get($endpoint)

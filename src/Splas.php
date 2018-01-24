@@ -60,37 +60,37 @@ class Splas
     /**
      * Get a photo by ID.
      *
-     * @param null|string $id
+     * @param null|string $imageId
      *
      * @return array|null
      */
-    public function getPhoto($id = null)
+    public function getPhoto($imageId = null)
     {
-        return ($id !== null) ? self::get('photos/'.$id) : null;
+        return ($imageId !== null) ? self::get('photos/'.$imageId) : null;
     }
 
     /**
      * Get a specific photo's statistics.
      *
-     * @param null|string $id
+     * @param null|string $imageId
      *
      * @return array|null
      */
-    public function getStats($id = null)
+    public function getStats($imageId = null)
     {
-        return ($id !== null) ? self::get('photos/'.$id.'/stats') : null;
+        return ($imageId !== null) ? self::get('photos/'.$imageId.'/stats') : null;
     }
 
     /**
      * Get an array containing the direct link for a photo (useful for downloading an image).
      *
-     * @param null|string $id
+     * @param null|string $imageId
      *
      * @return array|null
      */
-    public function getLink($id = null)
+    public function getLink($imageId = null)
     {
-        return ($id !== null) ? self::get('photos/'.$id.'/download') : null;
+        return ($imageId !== null) ? self::get('photos/'.$imageId.'/download') : null;
     }
 
     /**

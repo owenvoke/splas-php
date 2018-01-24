@@ -15,16 +15,16 @@ class Splas
     /**
      * @var string
      */
-    private static $app_id = '';
+    private static $appId = '';
 
     /**
      * Splas constructor.
      *
-     * @param string $app_id
+     * @param string $appId
      */
-    public function __construct($app_id = '')
+    public function __construct($appId = '')
     {
-        return ($app_id !== '') ? self::$app_id = $app_id : false;
+        return ($appId !== '') ? self::$appId = $appId : false;
     }
 
     /**
@@ -105,7 +105,7 @@ class Splas
         $url = self::$api_base.$endpoint.((strpos(
             $endpoint,
             '?'
-        ) > 0) ? '&client_id=' : '?client_id=').self::$app_id;
+        ) > 0) ? '&client_id=' : '?client_id=').self::$appId;
         $ch = curl_init();
         curl_setopt_array(
             $ch,

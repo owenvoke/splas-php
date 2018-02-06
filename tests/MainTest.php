@@ -1,8 +1,10 @@
 <?php
 
-use pxgamer\Splas\Splas;
+namespace pxgamer\Splas;
 
-class MainTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class MainTest extends TestCase
 {
     public function testCanBeInitialised()
     {

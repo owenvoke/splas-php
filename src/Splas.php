@@ -10,9 +10,9 @@ class Splas
     const API_BASE_URI = 'https://api.unsplash.com/';
 
     /**
-     * @var string
+     * @var null|string
      */
-    private static $appId = '';
+    private $appId;
 
     /**
      * Splas constructor.
@@ -21,7 +21,7 @@ class Splas
      */
     public function __construct($appId = '')
     {
-        return ($appId !== '') ? self::$appId = $appId : false;
+        return ($appId !== '') ? $this->appId = $appId : null;
     }
 
     /**

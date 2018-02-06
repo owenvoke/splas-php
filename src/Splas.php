@@ -31,7 +31,7 @@ class Splas
      */
     public function getPhotos()
     {
-        return self::get('photos');
+        return $this->get('photos');
     }
 
     /**
@@ -41,7 +41,7 @@ class Splas
      */
     public function getCuratedPhotos()
     {
-        return self::get('photos/curated');
+        return $this->get('photos/curated');
     }
 
     /**
@@ -51,7 +51,7 @@ class Splas
      */
     public function getRandom()
     {
-        return self::get('photos/random');
+        return $this->get('photos/random');
     }
 
     /**
@@ -63,7 +63,7 @@ class Splas
      */
     public function getPhoto($imageId = null)
     {
-        return ($imageId !== null) ? self::get('photos/'.$imageId) : null;
+        return ($imageId !== null) ? $this->get('photos/'.$imageId) : null;
     }
 
     /**
@@ -75,7 +75,7 @@ class Splas
      */
     public function getStats($imageId = null)
     {
-        return ($imageId !== null) ? self::get('photos/'.$imageId.'/stats') : null;
+        return ($imageId !== null) ? $this->get('photos/'.$imageId.'/stats') : null;
     }
 
     /**
@@ -87,7 +87,7 @@ class Splas
      */
     public function getLink($imageId = null)
     {
-        return ($imageId !== null) ? self::get('photos/'.$imageId.'/download') : null;
+        return ($imageId !== null) ? $this->get('photos/'.$imageId.'/download') : null;
     }
 
     /**
@@ -97,12 +97,12 @@ class Splas
      *
      * @return mixed
      */
-    private static function get($endpoint)
+    private function get($endpoint)
     {
         $url = self::API_BASE_URI.$endpoint.((strpos(
             $endpoint,
             '?'
-        ) > 0) ? '&client_id=' : '?client_id=').self::$appId;
+        ) > 0) ? '&client_id=' : '?client_id=').$this->appId;
         $ch = curl_init();
         curl_setopt_array(
             $ch,

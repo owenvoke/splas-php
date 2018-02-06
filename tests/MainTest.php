@@ -6,51 +6,51 @@ use PHPUnit\Framework\TestCase;
 
 class MainTest extends TestCase
 {
+    private $splasInstance;
+
+    public function setUp()
+    {
+        $this->splasInstance = new Splas();
+    }
+
     public function testCanBeInitialised()
     {
-        $splasPhp = new Splas();
-        $this->assertInstanceOf(Splas::class, $splasPhp);
+        $this->assertInstanceOf(Splas::class, $this->splasInstance);
     }
 
     public function testCanGetPhotos()
     {
-        $splasPhp = new Splas();
-        $photos = $splasPhp->getPhotos();
+        $photos = $this->splasInstance->getPhotos();
         $this->assertInternalType('array', $photos);
     }
 
     public function testCanGetCuratedPhotos()
     {
-        $splasPhp = new Splas();
-        $photos = $splasPhp->getCuratedPhotos();
+        $photos = $this->splasInstance->getCuratedPhotos();
         $this->assertInternalType('array', $photos);
     }
 
     public function testCanGetRandomPhotos()
     {
-        $splasPhp = new Splas();
-        $photos = $splasPhp->getRandom();
+        $photos = $this->splasInstance->getRandom();
         $this->assertInternalType('array', $photos);
     }
 
     public function testCanGetPhotoById()
     {
-        $splasPhp = new Splas();
-        $photo = $splasPhp->getPhoto('VGOiY1gZZYg');
+        $photo = $this->splasInstance->getPhoto('VGOiY1gZZYg');
         $this->assertInternalType('array', $photo);
     }
 
     public function testCanGetStatsById()
     {
-        $splasPhp = new Splas();
-        $photo = $splasPhp->getStats('VGOiY1gZZYg');
+        $photo = $this->splasInstance->getStats('VGOiY1gZZYg');
         $this->assertInternalType('array', $photo);
     }
 
     public function testCanGetLinkById()
     {
-        $splasPhp = new Splas();
-        $photo = $splasPhp->getLink('VGOiY1gZZYg');
+        $photo = $this->splasInstance->getLink('VGOiY1gZZYg');
         $this->assertInternalType('array', $photo);
     }
 }

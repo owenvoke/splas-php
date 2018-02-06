@@ -4,6 +4,20 @@ All notable changes to `splas-php` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## v4.1.0 - 2018-02-06
+
+### Added
+- Change static private methods/properties to be non-static
+- Refactored `MainTest` to `SplasTest`
+- Update Travis to include PHP 7.2
+- Add PhpDoc comments to the unit test class
+- Update tests to use `setUp()` method on PHPUnit
+- Update to use `assertInternalType()` for the tests
+
+### Fixed
+- Update PHP to use `^7.1` instead of `>=7.1`
+- Change `$api_base` to be a constant `API_BASE_URI`
+
 ## v4.0.3 - 2017-12-06
 
 ### Added

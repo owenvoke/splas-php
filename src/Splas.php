@@ -7,10 +7,7 @@ namespace pxgamer\Splas;
  */
 class Splas
 {
-    /**
-     * @var string
-     */
-    public static $api_base = 'https://api.unsplash.com/';
+    const API_BASE_URI = 'https://api.unsplash.com/';
 
     /**
      * @var string
@@ -102,7 +99,7 @@ class Splas
      */
     private static function get($endpoint)
     {
-        $url = self::$api_base.$endpoint.((strpos(
+        $url = self::API_BASE_URI.$endpoint.((strpos(
             $endpoint,
             '?'
         ) > 0) ? '&client_id=' : '?client_id=').self::$appId;

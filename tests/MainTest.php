@@ -16,47 +16,41 @@ class MainTest extends TestCase
     {
         $splasPhp = new Splas();
         $photos = $splasPhp->getPhotos();
-        $data = is_array($photos);
-        $this->assertTrue($data);
+        $this->assertInternalType('array', $photos);
     }
 
     public function testCanGetCuratedPhotos()
     {
         $splasPhp = new Splas();
         $photos = $splasPhp->getCuratedPhotos();
-        $data = is_array($photos);
-        $this->assertTrue($data);
+        $this->assertInternalType('array', $photos);
     }
 
     public function testCanGetRandomPhotos()
     {
         $splasPhp = new Splas();
         $photos = $splasPhp->getRandom();
-        $data = is_array($photos);
-        $this->assertTrue($data);
+        $this->assertInternalType('array', $photos);
     }
 
     public function testCanGetPhotoById()
     {
         $splasPhp = new Splas();
         $photo = $splasPhp->getPhoto('VGOiY1gZZYg');
-        $data = is_array($photo);
-        $this->assertTrue($data);
+        $this->assertInternalType('array', $photo);
     }
 
     public function testCanGetStatsById()
     {
         $splasPhp = new Splas();
         $photo = $splasPhp->getStats('VGOiY1gZZYg');
-        $data = is_array($photo);
-        $this->assertTrue($data);
+        $this->assertInternalType('array', $photo);
     }
 
     public function testCanGetLinkById()
     {
         $splasPhp = new Splas();
         $photo = $splasPhp->getLink('VGOiY1gZZYg');
-        $data = is_array($photo);
-        $this->assertTrue($data);
+        $this->assertInternalType('array', $photo);
     }
 }

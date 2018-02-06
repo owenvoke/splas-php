@@ -7,24 +7,21 @@ namespace pxgamer\Splas;
  */
 class Splas
 {
-    /**
-     * @var string
-     */
-    public static $api_base = 'https://api.unsplash.com/';
+    const API_BASE_URI = 'https://api.unsplash.com/';
 
     /**
-     * @var string
+     * @var null|string
      */
-    private static $app_id = '';
+    private $appId;
 
     /**
      * Splas constructor.
      *
-     * @param string $app_id
+     * @param string $appId
      */
-    public function __construct($app_id = '')
+    public function __construct($appId = '')
     {
-        return ($app_id !== '') ? self::$app_id = $app_id : false;
+        return ($appId !== '') ? $this->appId = $appId : null;
     }
 
     /**
@@ -34,7 +31,7 @@ class Splas
      */
     public function getPhotos()
     {
-        return self::get('photos');
+        return $this->get('photos');
     }
 
     /**
@@ -44,7 +41,7 @@ class Splas
      */
     public function getCuratedPhotos()
     {
-        return self::get('photos/curated');
+        return $this->get('photos/curated');
     }
 
     /**
@@ -54,43 +51,43 @@ class Splas
      */
     public function getRandom()
     {
-        return self::get('photos/random');
+        return $this->get('photos/random');
     }
 
     /**
      * Get a photo by ID.
      *
-     * @param null|string $id
+     * @param null|string $imageId
      *
      * @return array|null
      */
-    public function getPhoto($id = null)
+    public function getPhoto($imageId = null)
     {
-        return ($id !== null) ? self::get('photos/'.$id) : null;
+        return ($imageId !== null) ? $this->get('photos/'.$imageId) : null;
     }
 
     /**
      * Get a specific photo's statistics.
      *
-     * @param null|string $id
+     * @param null|string $imageId
      *
      * @return array|null
      */
-    public function getStats($id = null)
+    public function getStats($imageId = null)
     {
-        return ($id !== null) ? self::get('photos/'.$id.'/stats') : null;
+        return ($imageId !== null) ? $this->get('photos/'.$imageId.'/stats') : null;
     }
 
     /**
      * Get an array containing the direct link for a photo (useful for downloading an image).
      *
-     * @param null|string $id
+     * @param null|string $imageId
      *
      * @return array|null
      */
-    public function getLink($id = null)
+    public function getLink($imageId = null)
     {
-        return ($id !== null) ? self::get('photos/'.$id.'/download') : null;
+        return ($imageId !== null) ? $this->get('photos/'.$imageId.'/download') : null;
     }
 
     /**
@@ -100,12 +97,12 @@ class Splas
      *
      * @return mixed
      */
-    private static function get($endpoint)
+    private function get($endpoint)
     {
-        $url = self::$api_base.$endpoint.((strpos(
+        $url = self::API_BASE_URI.$endpoint.((strpos(
             $endpoint,
             '?'
-        ) > 0) ? '&client_id=' : '?client_id=').self::$app_id;
+        ) > 0) ? '&client_id=' : '?client_id=').$this->appId;
         $ch = curl_init();
         curl_setopt_array(
             $ch,

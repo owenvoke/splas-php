@@ -5,9 +5,9 @@ namespace pxgamer\Splas;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class MainTest
+ * Class SplasTest
  */
-class MainTest extends TestCase
+class SplasTest extends TestCase
 {
     /**
      * @var Splas

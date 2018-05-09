@@ -9,14 +9,6 @@
 
 A simple PHP wrapper for utilising the [Unsplash] api.
 
-## Structure
-
-```
-src/
-tests/
-vendor/
-```
-
 ## Install
 
 Via Composer

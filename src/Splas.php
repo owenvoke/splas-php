@@ -2,6 +2,8 @@
 
 namespace pxgamer\Splas;
 
+use GuzzleHttp\Client;
+
 /**
  * Class Splas.
  */
@@ -9,6 +11,10 @@ class Splas
 {
     const API_BASE_URI = 'https://api.unsplash.com/';
 
+    /**
+     * @var Client
+     */
+    private $client;
     /**
      * @var string
      */
@@ -21,6 +27,10 @@ class Splas
      */
     public function __construct(string $apiKey = '')
     {
+        $this->client = new Client([
+            'base_uri' => self::API_BASE_URI,
+        ]);
+
         $this->setApiKey($apiKey);
     }
 
@@ -99,24 +109,20 @@ class Splas
      */
     private function get(string $endpoint)
     {
-        $url = self::API_BASE_URI.$endpoint.((strpos(
-            $endpoint,
-            '?'
-        ) > 0) ? '&client_id=' : '?client_id=').$this->apiKey;
-        $ch = curl_init();
-        curl_setopt_array(
-            $ch,
-            [
-                CURLOPT_URL            => $url,
-                CURLOPT_RETURNTRANSFER => 1,
-            ]
+        return \GuzzleHttp\json_decode(
+            $this->client
+                ->get(
+                    self::API_BASE_URI.$endpoint,
+                    [
+                        'query' => [
+                            'client_id' => $this->apiKey,
+                        ],
+                    ]
+                )
+                ->getBody()
+                ->getContents(),
+            true
         );
-        $result = curl_exec($ch);
-        curl_close($ch);
-
-        $result = json_decode($result, true);
-
-        return $result;
     }
 
     /**

@@ -25,12 +25,12 @@ $splas = new Splas('APP_ID');
 
 Functions                    | Parameters | Returns
 ---------------------------- | ---------- | -------
-`$splas->getPhotos()`        | void       | array/null
-`$splas->getCuratedPhotos()` | void       | array/null
-`$splas->getRandom()`        | void       | array/null
-`$splas->getPhoto($id)`      | string     | array/null
-`$splas->getStats($id)`      | string     | array/null
-`$splas->getLink($id)`       | string     | array/null
+`$splas->getPhotos()`        | void       | array
+`$splas->getCuratedPhotos()` | void       | array
+`$splas->getRandom()`        | void       | array
+`$splas->getPhoto($id)`      | string     | array
+`$splas->getStats($id)`      | string     | array
+`$splas->getLink($id)`       | string     | array
 
 ## Change log
 

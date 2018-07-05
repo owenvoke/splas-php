@@ -2,7 +2,7 @@
 
 All notable changes to `splas-php` will be documented in this file.
 
-Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
+Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## v4.2.0 - 2018-07-05
 

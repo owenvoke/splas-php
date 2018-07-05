@@ -4,6 +4,15 @@ All notable changes to `splas-php` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## v4.2.0 - 2018-07-05
+
+### Added
+- Add new `setApiKey()` method
+- Add type hinting for all methods
+
+### Changed
+- Change to use GuzzleHTTP for API calls ([#3](https://github.com/pxgamer/splas-php/pull/3))
+
 ## v4.1.0 - 2018-02-06
 
 ### Added

@@ -24,6 +24,7 @@ class Splas
      * Splas constructor.
      *
      * @param string $apiKey
+     * @return void
      */
     public function __construct(string $apiKey = '')
     {
@@ -37,9 +38,9 @@ class Splas
     /**
      * Get an associative array of photos.
      *
-     * @return array|null
+     * @return array
      */
-    public function getPhotos()
+    public function getPhotos(): array
     {
         return $this->get('photos');
     }
@@ -47,9 +48,9 @@ class Splas
     /**
      * Get an associative array of curated photos.
      *
-     * @return array|null
+     * @return array
      */
-    public function getCuratedPhotos()
+    public function getCuratedPhotos(): array
     {
         return $this->get('photos/curated');
     }
@@ -57,9 +58,9 @@ class Splas
     /**
      * Get a random photo as an array from the API.
      *
-     * @return array|null
+     * @return array
      */
-    public function getRandom()
+    public function getRandom(): array
     {
         return $this->get('photos/random');
     }
@@ -67,47 +68,43 @@ class Splas
     /**
      * Get a photo by ID.
      *
-     * @param null|string $imageId
-     *
-     * @return array|null
+     * @param string $imageId
+     * @return array
      */
-    public function getPhoto($imageId = null)
+    public function getPhoto(string $imageId): array
     {
-        return ($imageId !== null) ? $this->get('photos/'.$imageId) : null;
+        return $this->get('photos/'.$imageId);
     }
 
     /**
      * Get a specific photo's statistics.
      *
-     * @param null|string $imageId
-     *
-     * @return array|null
+     * @param string $imageId
+     * @return array
      */
-    public function getStats($imageId = null)
+    public function getStats(string $imageId): array
     {
-        return ($imageId !== null) ? $this->get('photos/'.$imageId.'/stats') : null;
+        return $this->get('photos/'.$imageId.'/stats');
     }
 
     /**
      * Get an array containing the direct link for a photo (useful for downloading an image).
      *
-     * @param null|string $imageId
-     *
-     * @return array|null
+     * @param string $imageId
+     * @return array
      */
-    public function getLink($imageId = null)
+    public function getLink(string $imageId): array
     {
-        return ($imageId !== null) ? $this->get('photos/'.$imageId.'/download') : null;
+        return $this->get('photos/'.$imageId.'/download');
     }
 
     /**
      * Get the response from the API.
      *
      * @param string $endpoint
-     *
      * @return mixed
      */
-    private function get(string $endpoint)
+    private function get(string $endpoint): array
     {
         return \GuzzleHttp\json_decode(
             $this->client
@@ -127,6 +124,7 @@ class Splas
 
     /**
      * @param string $apiKey
+     * @return void
      */
     public function setApiKey(string $apiKey): void
     {

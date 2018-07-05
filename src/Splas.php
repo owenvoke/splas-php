@@ -10,18 +10,18 @@ class Splas
     const API_BASE_URI = 'https://api.unsplash.com/';
 
     /**
-     * @var null|string
+     * @var string
      */
-    private $appId;
+    protected $apiKey;
 
     /**
      * Splas constructor.
      *
-     * @param string $appId
+     * @param string $apiKey
      */
-    public function __construct($appId = '')
+    public function __construct(string $apiKey = '')
     {
-        return ($appId !== '') ? $this->appId = $appId : null;
+        $this->setApiKey($apiKey);
     }
 
     /**
@@ -97,12 +97,12 @@ class Splas
      *
      * @return mixed
      */
-    private function get($endpoint)
+    private function get(string $endpoint)
     {
         $url = self::API_BASE_URI.$endpoint.((strpos(
             $endpoint,
             '?'
-        ) > 0) ? '&client_id=' : '?client_id=').$this->appId;
+        ) > 0) ? '&client_id=' : '?client_id=').$this->apiKey;
         $ch = curl_init();
         curl_setopt_array(
             $ch,
@@ -117,5 +117,13 @@ class Splas
         $result = json_decode($result, true);
 
         return $result;
+    }
+
+    /**
+     * @param string $apiKey
+     */
+    public function setApiKey(string $apiKey): void
+    {
+        $this->apiKey = $apiKey;
     }
 }

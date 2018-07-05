@@ -10,6 +10,11 @@ use PHPUnit\Framework\TestCase;
 class SplasTest extends TestCase
 {
     /**
+     * Testing key for unit tests.
+     */
+    private const TEST_KEY = '397172750322145e4ccc8077eff2f628979e8ffa03fa51524d53629e7178d910';
+
+    /**
      * @var Splas
      */
     private $splasInstance;
@@ -19,7 +24,7 @@ class SplasTest extends TestCase
      */
     public function setUp()
     {
-        $this->splasInstance = new Splas();
+        $this->splasInstance = new Splas(self::TEST_KEY);
     }
 
     /**

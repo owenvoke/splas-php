@@ -4,83 +4,63 @@ namespace pxgamer\Splas;
 
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class SplasTest
- */
 class SplasTest extends TestCase
 {
-    /**
-     * @var Splas
-     */
+    private const TEST_PHOTO_ID = 'VGOiY1gZZYg';
+
+    /** @var Splas */
     private $splasInstance;
 
-    /**
-     * Initialise the test class.
-     */
-    public function setUp()
+    public function setUp(): void
     {
         $this->splasInstance = new Splas(getenv('UNSPLASH_API_KEY'));
     }
 
-    /**
-     * Check that the Splas instance is initialised.
-     */
-    public function testCanBeInitialised()
+    /** @test */
+    public function itCanBeInitialised(): void
     {
         $this->assertInstanceOf(Splas::class, $this->splasInstance);
     }
 
-    /**
-     * Check that the standard getPhotos() method works.
-     */
-    public function testCanGetPhotos()
+    /** @test */
+    public function itCanGetPhotos(): void
     {
         $photos = $this->splasInstance->getPhotos();
-        $this->assertInternalType('array', $photos);
+        $this->assertIsArray($photos);
     }
 
-    /**
-     * Check that the getCuratedPhotos() method works.
-     */
-    public function testCanGetCuratedPhotos()
+    /** @test */
+    public function itCanGetCuratedPhotos(): void
     {
         $photos = $this->splasInstance->getCuratedPhotos();
-        $this->assertInternalType('array', $photos);
+        $this->assertIsArray($photos);
     }
 
-    /**
-     * Check that the getRandom() method works.
-     */
-    public function testCanGetRandomPhotos()
+    /** @test */
+    public function itCanGetRandomPhotos(): void
     {
         $photos = $this->splasInstance->getRandom();
-        $this->assertInternalType('array', $photos);
+        $this->assertIsArray($photos);
     }
 
-    /**
-     * Check that the getPhoto() method works.
-     */
-    public function testCanGetPhotoById()
+    /** @test */
+    public function itCanGetPhotoById(): void
     {
-        $photo = $this->splasInstance->getPhoto('VGOiY1gZZYg');
-        $this->assertInternalType('array', $photo);
+        $photo = $this->splasInstance->getPhoto(self::TEST_PHOTO_ID);
+        $this->assertIsArray($photo);
     }
 
-    /**
-     * Check that the getStats() method works.
-     */
-    public function testCanGetStatsById()
+    /** @test */
+    public function itCanGetStatsById(): void
     {
-        $photo = $this->splasInstance->getStats('VGOiY1gZZYg');
-        $this->assertInternalType('array', $photo);
+        $photo = $this->splasInstance->getStats(self::TEST_PHOTO_ID);
+        $this->assertIsArray($photo);
     }
 
-    /**
-     * Check that the getLink() method works.
-     */
-    public function testCanGetLinkById()
+    /** @test */
+    public function itCanGetLinkById(): void
     {
-        $photo = $this->splasInstance->getLink('VGOiY1gZZYg');
-        $this->assertInternalType('array', $photo);
+        $photo = $this->splasInstance->getLink(self::TEST_PHOTO_ID);
+        $this->assertIsArray($photo);
     }
 }

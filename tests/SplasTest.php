@@ -26,41 +26,41 @@ class SplasTest extends TestCase
     public function itCanGetPhotos(): void
     {
         $photos = $this->splasInstance->getPhotos();
-        $this->assertInternalType('array', $photos);
+        $this->assertIsArray($photos);
     }
 
     /** @test */
     public function itCanGetCuratedPhotos(): void
     {
         $photos = $this->splasInstance->getCuratedPhotos();
-        $this->assertInternalType('array', $photos);
+        $this->assertIsArray($photos);
     }
 
     /** @test */
     public function itCanGetRandomPhotos(): void
     {
         $photos = $this->splasInstance->getRandom();
-        $this->assertInternalType('array', $photos);
+        $this->assertIsArray($photos);
     }
 
     /** @test */
     public function itCanGetPhotoById(): void
     {
         $photo = $this->splasInstance->getPhoto(self::TEST_PHOTO_ID);
-        $this->assertInternalType('array', $photo);
+        $this->assertIsArray($photo);
     }
 
     /** @test */
     public function itCanGetStatsById(): void
     {
         $photo = $this->splasInstance->getStats(self::TEST_PHOTO_ID);
-        $this->assertInternalType('array', $photo);
+        $this->assertIsArray($photo);
     }
 
     /** @test */
     public function itCanGetLinkById(): void
     {
         $photo = $this->splasInstance->getLink(self::TEST_PHOTO_ID);
-        $this->assertInternalType('array', $photo);
+        $this->assertIsArray($photo);
     }
 }

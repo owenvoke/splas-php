@@ -6,6 +6,8 @@ use PHPUnit\Framework\TestCase;
 
 class SplasTest extends TestCase
 {
+    private const TEST_PHOTO_ID = 'VGOiY1gZZYg';
+
     /** @var Splas */
     private $splasInstance;
 
@@ -44,21 +46,21 @@ class SplasTest extends TestCase
     /** @test */
     public function itCanGetPhotoById(): void
     {
-        $photo = $this->splasInstance->getPhoto('VGOiY1gZZYg');
+        $photo = $this->splasInstance->getPhoto(self::TEST_PHOTO_ID);
         $this->assertInternalType('array', $photo);
     }
 
     /** @test */
     public function itCanGetStatsById(): void
     {
-        $photo = $this->splasInstance->getStats('VGOiY1gZZYg');
+        $photo = $this->splasInstance->getStats(self::TEST_PHOTO_ID);
         $this->assertInternalType('array', $photo);
     }
 
     /** @test */
     public function itCanGetLinkById(): void
     {
-        $photo = $this->splasInstance->getLink('VGOiY1gZZYg');
+        $photo = $this->splasInstance->getLink(self::TEST_PHOTO_ID);
         $this->assertInternalType('array', $photo);
     }
 }
